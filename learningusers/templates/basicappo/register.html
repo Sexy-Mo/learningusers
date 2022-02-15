@@ -1,0 +1,24 @@
+{% extends 'basicappo/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<div class="jumbotron">
+  <title>register</title>
+  {% if registeredkey %}
+  <h1>Thanks for registeration</h1>
+  {% else %}
+  <h1>register here</h1>
+  <form method="post" encty='multipart/form-data' >
+    {% csrf_token %}
+    {{userformobjectkey.as_p}}
+     {{userinfoformobjectkey.as_p}}
+  <input type="submit" value="register">
+  </form>
+  {% endif %}
+
+</div>
+
+
+
+
+
+{% endblock %}
